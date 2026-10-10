@@ -223,12 +223,18 @@ const t = labels[lang];
       e.preventDefault();
       hideError();
 
+      const accessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY;
+      if (!accessKey) {
+        showError("Envoi momentanément indisponible, écrivez-nous à contact@teranga-trade-logistics.com");
+        return;
+      }
+
       const formData = new FormData(form);
       const payload = {
-        access_key: "14e39eb2-cb9b-4792-acd2-b199a8272685",
+        access_key: accessKey,
         name: `${(formData.get("firstName") as string)?.trim()} ${(formData.get("lastName") as string)?.trim()}`,
         email: (formData.get("email") as string)?.trim(),
-        subject: (formData.get("subject") as string)?.trim() || "Nouveau message de Toolubaay",
+        subject: (formData.get("subject") as string)?.trim() || "Nouvelle demande de devis TTL",
         message: (formData.get("message") as string)?.trim(),
       };
 

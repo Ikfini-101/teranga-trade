@@ -1,8 +1,7 @@
 /**
  * Cloudflare Pages Function — POST /api/contact
  * Runtime : Cloudflare Workers (edge)
- * Email   : Resend API (fetch natif, pas de SDK à bundler)
- * Destinataires : cblniv15@gmail.com · infotoolubay@gmail.com
+ * Email   : Web3Forms API
  */
 
 export async function onRequestPost(context) {
@@ -51,7 +50,7 @@ export async function onRequestPost(context) {
   }
 
   // --- Clé API Web3Forms ---
-  const accessKey = env.WEB3FORMS_ACCESS_KEY || "14e39eb2-cb9b-4792-acd2-b199a8272685";
+  const accessKey = env.WEB3FORMS_ACCESS_KEY;
 
   if (!accessKey || accessKey.startsWith("PLACEHOLDER")) {
     return Response.json(
@@ -66,7 +65,7 @@ export async function onRequestPost(context) {
       access_key: accessKey,
       name: `${firstName} ${lastName}`,
       email: email,
-      subject: subject?.trim() ? `[Toolubaay] ${subject.trim()}` : "Nouveau message depuis TooluBaay",
+      subject: subject?.trim() ? `[TTL] ${subject.trim()}` : "Nouvelle demande de devis TTL",
       message: message,
       replyto: email
     };

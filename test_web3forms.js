@@ -1,14 +1,18 @@
 const fetch = require('node-fetch');
 
 async function test() {
-  const accessKey = "14e39eb2-cb9b-4792-acd2-b199a8272685";
+  const accessKey = process.env.WEB3FORMS_ACCESS_KEY;
+  if (!accessKey) {
+    console.log("Aucune variable d'environnement WEB3FORMS_ACCESS_KEY définie.");
+    return;
+  }
   const web3formsPayload = {
     access_key: accessKey,
-    name: "elhadj pouye",
-    email: "cblniv15@gmail.com",
-    subject: "[Toolubaay] DEMANDE INFO",
-    message: "CECI EST UN MESSAGE TEST.",
-    replyto: "cblniv15@gmail.com"
+    name: "Test TTL",
+    email: "test@teranga-trade-logistics.com",
+    subject: "[TTL] Test Web3Forms",
+    message: "Ceci est un message de test technique TTL.",
+    replyto: "test@teranga-trade-logistics.com"
   };
 
   try {
