@@ -45,3 +45,8 @@ export interface Partner {
 }
 
 export const partnersData: Partner[] = [];
+
+export const CONTACT = {
+  email: "contact@teranga-trade-logistics.com",
+  whatsapp: "",
+};

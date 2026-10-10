@@ -3,137 +3,123 @@
 import MainLayout from "@/layouts/MainLayout.astro";
 import HeroSection from "@components/sections/landing/HeroSection.astro";
 import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
-import PhotoCarousel from "@components/sections/landing/PhotoCarousel.astro";
-import CEOSection from "@components/sections/landing/CEOSection.astro";
 import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
-import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
-import TestimonialsSection from "@components/sections/testimonials/TestimonialsSection.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
-import WorldVisionThrive from "@components/WorldVisionThrive.astro";
 
-import heroImage from "@images/peanut_farm_hero.png";
+import heroPlaceholder from "@images/ttl_placeholder.png";
 import faqs from "@data/fr/faqs.json";
 import features from "@data/fr/features.json";
-import featureImage from "@images/women_cooperative.png";
-import tools from "@images/image_genere.png";
-
-const avatarSrcs: Array<string> = [
-  "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-4.0.3&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
-];
-
-// Toggle this flag to true once the World Vision partnership is officially signed
-const SHOW_WORLD_VISION_BLOCK = false;
 ---
 
 <MainLayout lang="fr">
-
-
+  {/* 1. HERO SECTION */}
   <HeroSection
-    title=`Valoriser les Femmes et les Jeunes, <span class="text-yellow-500 dark:text-yellow-400">Transformer l'Agriculture</span>`
-    subTitle="TooluBaay structure la filière arachide au Sénégal, fournissant aux GIE de femmes et de jeunes en milieu rural des outils numériques, des formations durables et un accès au marché pour une qualité premium."
-    primaryBtn="Découvrir nos produits"
-    primaryBtnURL="/products"
-    secondaryBtn="Devenir Partenaire"
-    secondaryBtnURL="/contact"
+    title=`Votre partenaire logistique & négoce international <span class="text-yellow-500 dark:text-yellow-400">Europe — Afrique</span>`
+    subTitle="Centrale d'achat européenne et opérateur de négoce international au service des professionnels d'Afrique de l'Ouest."
+    primaryBtn="Demander un devis"
+    primaryBtnURL="/contact"
+    secondaryBtn="Découvrir les équipements"
+    secondaryBtnURL="/products"
     withReview={false}
-    avatars={avatarSrcs}
-    rating=`<span class="font-bold">4.8</span> / 5`
-    starCount={4}
-    reviews=`À partir de plus de <span class="font-bold">12,8k</span> avis`
-    src={heroImage}
-    alt="GIE de culture d'arachide au Sénégal"
+    src={heroPlaceholder}
+    alt="Teranga Trade And Logistics"
   />
 
-  {SHOW_WORLD_VISION_BLOCK && <WorldVisionThrive />}
+  {/* 2. QUI SOMMES-NOUS */}
+  <section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full">
+    <div class="rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-white/70 dark:bg-neutral-800/70 p-8 sm:p-12 shadow-sm">
+      <div class="max-w-3xl">
+        <h2 class="text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 sm:text-3xl lg:text-4xl">
+          Qui sommes-nous ?
+        </h2>
+        <p class="mt-4 text-lg leading-relaxed text-neutral-700 dark:text-neutral-300">
+          Connecter les continents, sécuriser vos investissements et moderniser les infrastructures de transport, de construction et d'agriculture en Afrique de l'Ouest : telle est la mission de Teranga Trade And Logistics. Grâce à notre centrale d'achat en France et notre ancrage opérationnel sur le terrain, nous visons une relation commerciale transparente et fiable.
+        </p>
+      </div>
 
-  <PhotoCarousel
-    title="La Vie de nos GIE en Images"
-    subTitle="Découvrez en images le quotidien de nos producteurs et de nos GIE partenaires."
-  />
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="rounded-xl border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900/50 p-6">
+          <div class="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">Centrale d'achat</div>
+          <h3 class="mt-2 text-lg font-bold text-neutral-800 dark:text-neutral-200">Teranga Trade And Logistics — Europe</h3>
+          <p class="mt-1 text-sm text-neutral-600 dark:text-neutral-400">SASU, France</p>
+        </div>
 
-  <CEOSection />
+        <div class="rounded-xl border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900/50 p-6">
+          <div class="text-xs font-bold uppercase tracking-wider text-orange-600 dark:text-orange-400">Implantation locale</div>
+          <h3 class="mt-2 text-lg font-bold text-neutral-800 dark:text-neutral-200">Teranga Trade And Logistics — Africa</h3>
+          <p class="mt-1 text-sm text-neutral-600 dark:text-neutral-400">SARL, Sénégal</p>
+        </div>
 
+        <div class="rounded-xl border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900/50 p-6 sm:col-span-2 lg:col-span-1">
+          <div class="text-xs font-bold uppercase tracking-wider text-yellow-600 dark:text-yellow-400">Gouvernance</div>
+          <h3 class="mt-2 text-lg font-bold text-neutral-800 dark:text-neutral-200">Aliou CISSE</h3>
+          <p class="mt-1 text-sm text-neutral-600 dark:text-neutral-400">Président-Fondateur</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* 3. TROIS PÔLES */}
   <FeaturesGeneral
-    title="Cultiver l'Impact & l'Innovation"
-    subTitle="Chez TooluBaay, nous relevons les défis uniques de l'agriculture familiale au Sénégal. En combinant solutions AgriTech et transformation locale, nous renforçons les GIE de femmes et de jeunes, améliorons la résilience des cultures et livrons une pâte d'arachide premium conforme aux normes HACCP pour une qualité premium."
-    src={featureImage}
-    alt="Transformation de la pâte d'arachide par des femmes locales"
+    title="Nos Trois Pôles d'Excellence"
+    subTitle="Une offre ciblée pour répondre aux impératifs d'équipement et de logistique des professionnels en Afrique de l'Ouest."
+    src={heroPlaceholder}
+    alt="Pôles d'excellence Teranga Trade And Logistics"
     features={features}
   />
 
-  <FeaturesNavs
-    title=`L'intelligence <span class="text-yellow-500 dark:text-yellow-400">AgriTech</span> au service des champs.`
-    tabs={[
-      {
-        heading: "Suivi Agroclimatique",
-        content:
-          "Notre application mobile fournit des prévisions météorologiques agricoles localisées et vocales dans les langues locales (wolof, pulaar, mandingue), aidant les paysans à planifier au mieux leurs récoltes.",
-        svg: "tools",
-        src: tools,
-        alt: "Application mobile TooluBaay",
-        first: true,
-      },
-      {
-        heading: "Chatbot IA Vocal",
-        content:
-          "Un conseiller agricole virtuel interactif (en cours de développement) conçu pour répondre en langues locales aux questions des producteurs pour démocratiser l'accès au conseil.",
-        svg: "dashboard",
-        src: tools,
-        alt: "Schéma du conseiller IA vocal",
-        second: true,
-      },
-      {
-        heading: "Diagnostic de Maladies par Photo",
-        content:
-          "Grâce à la reconnaissance d'images par IA, le producteur prend une photo d'une feuille malade et reçoit instantanément un diagnostic et des suggestions de traitement bio.",
-        svg: "house",
-        src: tools,
-        alt: "Prise de photo d'une feuille malade",
-      },
-    ]}
-  />
+  {/* 4. MÉTHODE D'ACHAT */}
+  <section id="methode" class="scroll-mt-20 mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 sm:text-3xl lg:text-4xl">
+        Notre méthode d'achat
+      </h2>
+      <p class="mt-4 text-lg text-neutral-600 dark:text-neutral-400">
+        Un processus rigoureux en 4 étapes pour sécuriser l'acquisition et le transport de vos matériels.
+      </p>
+    </div>
 
-  <TestimonialsSection
-    title="Restructurer les Chaînes de Valeur Rurales"
-    subTitle="Soutenir la souveraineté alimentaire nationale par la juste rémunération des femmes et des jeunes et l'innovation."
-    testimonials={[
-      {
-        content:
-          "TooluBaay a complètement changé notre quotidien. Grâce au suivi météo et au prix d'achat garanti, les revenus de notre GIE ont augmenté, et nous sommes fières de voir notre pâte d'arachide vendue dans des pots premium.",
-        author: "M. K.",
-        role: "Présidente | GIE K*** (D***)",
-        avatarSrc:
-          "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=320&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
-      },
-    ]}
-    statistics={[
-      {
-        count: "120+",
-        description:
-          "femmes et jeunes accompagnés dans nos pôles agricoles",
-      },
-      {
-        count: "+25%",
-        description:
-          "de hausse de revenus pour les GIE partenaires en Phase 1",
-      },
-      {
-        count: "21+",
-        description:
-          "GIE de femmes et de jeunes structurés dans les pôles agricoles",
-      },
-      {
-        count: "100%",
-        description: "naturelle, garantie sans aflatoxine et conforme aux normes HACCP pour une qualité premium",
-      },
-    ]}
-  />
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="relative rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white/70 dark:bg-neutral-800/70 p-6">
+        <span class="text-3xl font-extrabold text-yellow-500 dark:text-yellow-400">01</span>
+        <h3 class="mt-2 text-lg font-bold text-neutral-800 dark:text-neutral-200">Demande & Cahier des charges</h3>
+        <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-400">Expression de votre besoin spécifique et définition précise des critères techniques requis.</p>
+      </div>
 
+      <div class="relative rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white/70 dark:bg-neutral-800/70 p-6">
+        <span class="text-3xl font-extrabold text-yellow-500 dark:text-yellow-400">02</span>
+        <h3 class="mt-2 text-lg font-bold text-neutral-800 dark:text-neutral-200">Sourcing en Europe</h3>
+        <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-400">Sélection rigoureuse des matériels auprès de nos réseaux et partenaires professionnels en Europe.</p>
+      </div>
+
+      <div class="relative rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white/70 dark:bg-neutral-800/70 p-6">
+        <span class="text-3xl font-extrabold text-yellow-500 dark:text-yellow-400">03</span>
+        <h3 class="mt-2 text-lg font-bold text-neutral-800 dark:text-neutral-200">Expédition maritime</h3>
+        <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-400">Organisation du transport maritime depuis les ports européens de départ.</p>
+      </div>
+
+      <div class="relative rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white/70 dark:bg-neutral-800/70 p-6">
+        <span class="text-3xl font-extrabold text-yellow-500 dark:text-yellow-400">04</span>
+        <h3 class="mt-2 text-lg font-bold text-neutral-800 dark:text-neutral-200">Livraison au port convenu</h3>
+        <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-400">Mise à disposition au port de destination avec remise des documents d'expédition.</p>
+      </div>
+    </div>
+
+    <div class="mt-8 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-neutral-100/80 dark:bg-neutral-900/60 p-6">
+      <h4 class="text-sm font-bold uppercase tracking-wider text-neutral-800 dark:text-neutral-200">Modalités de livraison (Incoterm CFR)</h4>
+      <p class="mt-2 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+        En livraison CFR, le vendeur organise et paie le transport maritime jusqu'au port de destination convenu. Les obligations respectives, les risques et les frais sont précisés dans le contrat et selon l'Incoterm applicable.
+      </p>
+    </div>
+  </section>
+
+  {/* 5. FAQ */}
   <FAQ title="Questions<br />fréquemment posées" faqs={faqs} />
 
+  {/* 6. APPEL À L'ACTION FINAL */}
   <HeroSectionAlt
-    title="Soutenir l'Autonomie & l'Impact"
-    subTitle="Rejoignez-nous pour étendre la chaîne de valeur inclusive de transformation d'arachide au Sénégal."
+    title="Prêt à équiper votre activité ?"
+    subTitle="Contactez notre centrale d'achat pour étudier vos besoins et recevoir une cotation sur-mesure."
     url="/contact"
   />
 </MainLayout>

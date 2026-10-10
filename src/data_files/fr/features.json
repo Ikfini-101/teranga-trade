@@ -1,22 +1,17 @@
 [
   {
-    "heading": "Autonomisation des GIE de Femmes",
-    "content": "Soutien aux GIE ruraux dans le Sénégal oriental, garantissant des prix d'achat équitables et une inclusion structurelle.",
-    "svg": "groups"
+    "heading": "Transport & Logistique de Voyageurs",
+    "content": "Importation d'autocars de grande capacité (exemples de marques : Mercedes-Benz, Iveco, Volvo, Setra) adaptés aux besoins des professionnels et collectivités.",
+    "svg": "tools"
   },
   {
-    "heading": "Assurance Qualité Premium",
-    "content": "Contrôle rigoureux de l'aflatoxine et transformation 100% naturelle de pâte d'arachide premium, HACCP.",
+    "heading": "Matériel et Engins de BTP",
+    "content": "Fourniture d'engins de chantier robustes : tractopelles polyvalents, pelles hydrauliques et chargeuses sur pneus pour vos projets d'infrastructures.",
+    "svg": "hammer"
+  },
+  {
+    "heading": "Équipements et Modernisation Agricole",
+    "content": "Sourcing de matériels agricoles européens : tracteurs agricoles, motoculteurs et moissonneuses pour moderniser et développer vos exploitations.",
     "svg": "verified"
-  },
-  {
-    "heading": "Innovation AgriTech",
-    "content": "Suivi agroclimatique, guidage vocal en langues locales (wolof, pulaar, mandingue) et diagnostic phytosanitaire par IA.",
-    "svg": "books"
-  },
-  {
-    "heading": "Traçabilité et Impact Social",
-    "content": "Chaque pot contient un QR code reliant directement le consommateur au GIE de femmes productrices à l'origine du lot.",
-    "svg": "frame"
   }
 ]
