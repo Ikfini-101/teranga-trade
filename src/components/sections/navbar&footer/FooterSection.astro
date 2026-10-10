@@ -2,20 +2,16 @@
 // Import the necessary dependencies
 import FooterSocialLink from "@components/ui/links/FooterSocialLink.astro";
 import EmailFooterInput from "@components/ui/forms/input/EmailFooterInput.astro";
-import enStrings from "@utils/en/navigation.ts";
 import frStrings from "@utils/navigation.ts";
 import Icon from "@components/ui/icons/Icon.astro";
 import BrandLogo from "@components/BrandLogo.astro";
 import { SITE } from "@data/constants";
 
-// Select the correct translation based on the page's lang prop:
-const strings = Astro.currentLocale === "en" ? enStrings : frStrings;
+const strings = frStrings;
 
-// Define the variables that will be used in this component
-const sectionThreeTitle: string = Astro.currentLocale === "fr" ? "Rester à jour" : "Stay up to date";
-const sectionThreeContent: string = Astro.currentLocale === "fr" ? "Restez informé des derniers outils et des offres exclusives." :
-  "Stay updated with the latest tools and exclusive deals.";
-const crafted: string = Astro.currentLocale === "fr" ? "Fabriqué par" : "Crafted by";
+const sectionThreeTitle = "Rester informé";
+const sectionThreeContent = "Recevez nos dernières opportunités d'équipements et d'engins.";
+const crafted = "Propulsé par";
 ---
 
 <footer class="w-full bg-neutral-300/40 backdrop-blur-md dark:bg-neutral-900/40 border-t border-white/20 dark:border-neutral-800/30">
@@ -73,20 +69,22 @@ const crafted: string = Astro.currentLocale === "fr" ? "Fabriqué par" : "Crafte
       class="mt-9 grid gap-y-2 sm:mt-12 sm:flex sm:items-center sm:justify-between sm:gap-y-0"
     >
         <p class="text-sm text-neutral-600 dark:text-neutral-400">
-          <span id="current-year"></span> {SITE.title} by XELQOOM LAB
+          © <span id="current-year"></span> {SITE.title}. Tous droits réservés.
         </p>
 
       <!-- Social Brands -->
       <div>
-        <FooterSocialLink url={strings.socialLinks.facebook}
-          ><Icon name="facebookFooter" />
-        </FooterSocialLink>
+        {strings.socialLinks.facebook ? (
+          <FooterSocialLink url={strings.socialLinks.facebook}>
+            <Icon name="facebookFooter" />
+          </FooterSocialLink>
+        ) : null}
 
-        <FooterSocialLink url={strings.socialLinks.x}
-          ><Icon name="xFooter" /></FooterSocialLink
-        >
-
-
+        {strings.socialLinks.x ? (
+          <FooterSocialLink url={strings.socialLinks.x}>
+            <Icon name="xFooter" />
+          </FooterSocialLink>
+        ) : null}
       </div>
     </div>
 

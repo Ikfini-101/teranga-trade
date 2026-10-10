@@ -1,33 +1,30 @@
 const navBarLinks = [
   { name: "Accueil", url: "/" },
-  { name: "Produits", url: "/products" },
-  { name: "Impact", url: "/impact" },
-  { name: "Technologie", url: "/technology" },
-  { name: "Traçabilité", url: "/traceability" },
+  { name: "Équipements", url: "/products" },
+  { name: "Méthode d'achat", url: "/#methode" },
   { name: "Contact", url: "/contact" },
 ];
 
 const footerLinks = [
   {
-    section: "GIE TooluBaay",
+    section: "Teranga Trade And Logistics",
     links: [
       { name: "Accueil", url: "/" },
-      { name: "Produits & Impact", url: "/products" },
-      { name: "Module Traçabilité", url: "/traceability" },
+      { name: "Équipements", url: "/products" },
+      { name: "Méthode d'achat", url: "/#methode" },
     ],
   },
   {
-    section: "Partenaires",
+    section: "Contact",
     links: [
-      { name: "Devenir Partenaire", url: "/contact" },
-      { name: "Technologie", url: "/technology" },
+      { name: "Demander un devis", url: "/contact" },
     ],
   },
 ];
 
 const socialLinks = {
-  facebook: "https://www.facebook.com/",
-  x: "https://twitter.com/",
+  facebook: "",
+  x: "",
 };
 
 export default {
