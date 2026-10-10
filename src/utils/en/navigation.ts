@@ -1,34 +1,33 @@
 // An array of links for navigation bar
 const navBarLinks = [
-  { name: "Home", url: "/en" },
-  { name: "Products", url: "/en/products" },
-  { name: "Impact", url: "/en/impact" },
-  { name: "Technology", url: "/en/technology" },
-  { name: "Traceability", url: "/en/traceability" },
-  { name: "Contact", url: "/en/contact" },
+  { name: "Home", url: "/" },
+  { name: "Equipment", url: "/products" },
+  { name: "Purchasing Method", url: "/#methode" },
+  { name: "Contact", url: "/contact" },
 ];
+
 // An array of links for footer
 const footerLinks = [
   {
-    section: "TooluBaay GIE",
+    section: "Teranga Trade And Logistics",
     links: [
-      { name: "Home", url: "/en" },
-      { name: "Products & Impact", url: "/en/products" },
-      { name: "Traceability Module", url: "/en/traceability" },
+      { name: "Home", url: "/" },
+      { name: "Equipment", url: "/products" },
+      { name: "Purchasing Method", url: "/#methode" },
     ],
   },
   {
-    section: "Partners",
+    section: "Contact",
     links: [
-      { name: "Become a Partner", url: "/en/contact" },
-      { name: "Technology", url: "/en/technology" },
+      { name: "Request a Quote", url: "/contact" },
     ],
   },
 ];
+
 // An object of links for social icons
 const socialLinks = {
-  facebook: "https://www.facebook.com/",
-  x: "https://twitter.com/",
+  facebook: "",
+  x: "",
 };
 
 export default {

@@ -5,7 +5,7 @@ export const SITE = {
   tagline: "Votre partenaire logistique & négoce international Europe — Afrique",
   description: "Centrale d'achat européenne et opérateur de négoce international au service des professionnels d'Afrique de l'Ouest : autocars, matériel BTP et équipements agricoles.",
   description_short: "Centrale d'achat européenne et négoce international : autocars, matériel BTP et équipements agricoles.",
-  url: "https://REMPLACER-PAR-DOMAINE-DEFINITIF",
+  url: "https://teranga-trade.pages.dev",
   author: "Teranga Trade And Logistics",
 };
 

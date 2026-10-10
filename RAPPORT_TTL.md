@@ -131,7 +131,7 @@
 
 | Élément | État actuel | Action requise de l'utilisateur | Où le renseigner |
 |---|---|---|---|
-| **Nom de domaine** | Placeholder `https://REMPLACER-PAR-DOMAINE-DEFINITIF` | Acheter / configurer le nom de domaine officiel TTL | `astro.config.mjs` (`site`), `src/data_files/constants.ts` (`SITE.url`) et configuration DNS Cloudflare |
+| **Nom de domaine** | Pré-configuré `https://teranga-trade.pages.dev` (Pages) | Configurer le domaine personnalisé définitif si disponible | `astro.config.mjs` (`site`), `src/data_files/constants.ts` (`SITE.url`) et DNS Cloudflare |
 | **Numéro WhatsApp direction** | Masqué (bouton totalement invisible, aucun lien cassé) | Fournir le numéro WhatsApp professionnel au format international (ex: `33612345678`) | `src/data_files/constants.ts` (`CONTACT.whatsapp`) |
 | **Clé Web3Forms** | Neutralisée (message de repli propre informant d'écrire par mail) | Créer une clé d'accès gratuite sur web3forms.com avec l'adresse `contact@teranga-trade-logistics.com` | Variable d'environnement de production `PUBLIC_WEB3FORMS_ACCESS_KEY` sur Cloudflare Pages |
 | **Photos des 2 produits** | Placeholders neutres brandés TTL (« Photo à venir ») | Fournir les photos réelles de l'Iveco Crossway et du JCB 3CX | Déposer les fichiers dans `src/images/` et mettre à jour `imgCard`/`imgMain` dans les 2 fiches markdown (`src/content/products/fr/`) |

@@ -1,0 +1,12 @@
+# Configuration Cloudflare Pages — Teranga Trade And Logistics
+name = "teranga-trade"
+pages_build_output_dir = "dist"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+PUBLIC_SITE_URL = "https://teranga-trade.pages.dev"
+
+# Pour la fonction POST /api/contact :
+# Définir la variable secrète WEB3FORMS_ACCESS_KEY via le dashboard Cloudflare Pages ou :
+# npx wrangler pages secret put WEB3FORMS_ACCESS_KEY --project-name=teranga-trade
