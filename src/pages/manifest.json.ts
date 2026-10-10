@@ -44,14 +44,14 @@ export const GET: APIRoute = async () => {
   );
 
   const manifest = {
-    short_name: "ScrewFast",
-    name: "ScrewFast",
+    short_name: "TTL",
+    name: "Teranga Trade And Logistics",
     icons,
     display: "minimal-ui",
     id: "/",
     start_url: "/",
-    theme_color: "#FFEDD5",
-    background_color: "#262626",
+    theme_color: "#14325C",
+    background_color: "#0A1E3C",
   };
 
   return new Response(JSON.stringify(manifest));
