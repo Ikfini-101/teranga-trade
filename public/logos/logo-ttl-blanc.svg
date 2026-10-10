@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 468 148" width="936" height="296">
+  <g transform="translate(24 24) scale(1)">
+    <circle cx="50" cy="50" r="45.5" fill="none" stroke="#FAF8F4" stroke-width="5"></circle>
+    <path d="M23.00 56.00 A22 22 0 0 1 23.65 50.68 L17.14 47.95 A29 29 0 0 1 19.61 42.00 L26.14 44.67 A22 22 0 0 1 33.67 37.14 L31.00 30.61 A29 29 0 0 1 36.95 28.14 L39.68 34.65 A22 22 0 0 1 50.32 34.65 L53.05 28.14 A29 29 0 0 1 59.00 30.61 L56.33 37.14 A22 22 0 0 1 63.86 44.67 L70.39 42.00 A29 29 0 0 1 72.86 47.95 L66.35 50.68 A22 22 0 0 1 67.00 56.00 L58.00 56.00 A13 13 0 0 0 32.00 56.00 Z" fill="#F2A900"></path>
+    <path d="M8 66 C 26 55, 42 70, 58 70 C 68 70, 76 66, 83 60 C 77 73, 67 80, 55 80 C 38 80, 26 66, 8 66 Z" fill="#FAF8F4"></path>
+    <path d="M79 62 C 76 50, 80 42, 89 38 C 91 51, 87 58, 79 62 Z" fill="#0E9F6E"></path>
+  </g>
+  <text x="144" y="71" font-family="Montserrat, 'Helvetica Neue', Arial, sans-serif" font-weight="800" font-size="59" fill="#FAF8F4" textLength="300" lengthAdjust="spacingAndGlyphs">TERANGA</text>
+  <text x="145" y="96" font-family="Montserrat, 'Helvetica Neue', Arial, sans-serif" font-weight="500" font-size="17" fill="#F2A900" textLength="276" lengthAdjust="spacing">TRADE And LOGISTICS</text>
+</svg>

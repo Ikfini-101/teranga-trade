@@ -2,12 +2,20 @@
 const { class: className } = Astro.props;
 ---
 <img
-  src="/logos/logo-ttl-provisoire.svg"
+  src="/logos/logo-ttl.svg"
   alt="Teranga Trade And Logistics"
   class={`${className || "h-auto w-40"} block dark:hidden object-contain`}
+  width="468"
+  height="148"
+  loading="eager"
+  decoding="async"
 />
 <img
-  src="/logos/logo-ttl-provisoire-blanc.svg"
+  src="/logos/logo-ttl-blanc.svg"
   alt="Teranga Trade And Logistics"
   class={`${className || "h-auto w-40"} hidden dark:block object-contain`}
+  width="468"
+  height="148"
+  loading="eager"
+  decoding="async"
 />
