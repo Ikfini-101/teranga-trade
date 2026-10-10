@@ -122,7 +122,7 @@
 | `arachide` (insensible à la casse) | **0 résultat** | PASS |
 | `221774745011` | **0 résultat** | PASS |
 | `14e39eb2-` (ancienne clé Web3Forms) | **0 résultat** | PASS |
-| `bethio` (hors Cheikh) | **0 résultat** | PASS |
+| Mention sans titre Cheikh Bethio | **0 résultat** | PASS |
 | `FCFA` | **0 résultat** | PASS |
 
 ---
