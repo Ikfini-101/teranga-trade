@@ -202,19 +202,19 @@ main section li {
   color: var(--color-gray-200, #e4e4e7) !important;
 }
 
-/* --- LIQUID GLASS NAVBAR (WhatsApp / iOS modern liquid glass) --- */
+/* --- PURE CRYSTAL WATER NAVBAR --- */
 .liquid-glass-nav {
-  -webkit-backdrop-filter: blur(24px) saturate(160%);
-  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(4px) saturate(190%) contrast(104%);
+  backdrop-filter: blur(4px) saturate(190%) contrast(104%);
 }
 
 /* Fallback when backdrop-filter is unsupported: more opaque glass */
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .liquid-glass-nav {
-    background-color: rgba(255, 255, 255, 0.92) !important;
+    background-color: rgba(255, 255, 255, 0.94) !important;
   }
 
   .dark .liquid-glass-nav {
-    background-color: rgba(24, 24, 27, 0.94) !important;
+    background-color: rgba(15, 23, 42, 0.94) !important;
   }
 }

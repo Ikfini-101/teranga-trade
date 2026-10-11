@@ -13,12 +13,19 @@ const homeUrl = "/";
 <header
   class="sticky inset-x-0 top-4 z-50 flex w-full flex-wrap text-sm md:flex-nowrap md:justify-start"
 >
-  <!-- Navigation container -->
+  <!-- Navigation container: Pure Crystal Water with Surface Tension Meniscus -->
   <nav
-    class="liquid-glass-nav relative mx-2 w-full rounded-[32px] border border-white/60 bg-white/45 px-4 py-2.5 backdrop-blur-2xl backdrop-saturate-150 shadow-[0_8px_32px_0_rgba(11,37,69,0.08),inset_0_1px_1px_rgba(255,255,255,0.7)] transition-all duration-300 dark:border-white/10 dark:bg-neutral-900/50 dark:shadow-[0_8px_32px_0_rgba(0,0,0,0.35),inset_0_1px_1px_rgba(255,255,255,0.12)] md:flex md:items-center md:justify-between md:px-6 md:py-1.5 lg:px-8 xl:mx-auto"
+    class="liquid-glass-nav relative mx-2 w-full overflow-hidden rounded-[32px] border border-white/70 bg-white/[0.08] px-4 py-2.5 shadow-[0_12px_36px_rgba(11,37,69,0.06),inset_0_1.5px_2px_0_rgba(255,255,255,0.9),inset_0_-1px_2px_0_rgba(255,255,255,0.25)] transition-colors duration-300 dark:border-white/20 dark:bg-slate-950/[0.22] dark:shadow-[0_12px_36px_rgba(0,0,0,0.45),inset_0_1.5px_2px_0_rgba(255,255,255,0.35),inset_0_-1px_2px_0_rgba(255,255,255,0.08)] md:flex md:items-center md:justify-between md:px-6 md:py-1.5 lg:px-8 xl:mx-auto"
     aria-label="Global"
   >
-    <div class="flex items-center justify-between">
+    <!-- Interactive Water Ripple Surface Canvas (Moves on Mouse Hover) -->
+    <canvas
+      id="navbar-water-canvas"
+      class="pointer-events-none absolute inset-0 z-0 h-full w-full rounded-[32px]"
+      aria-hidden="true"
+    ></canvas>
+
+    <div class="relative z-10 flex items-center justify-between">
       <!-- Brand logo -->
       <a
         class="flex-none rounded-lg text-xl font-bold outline-hidden ring-zinc-500 focus-visible:ring-3 dark:ring-zinc-200 dark:focus:outline-hidden"
@@ -33,7 +40,7 @@ const homeUrl = "/";
           type="button"
           class="hs-collapse-toggle flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold text-neutral-800 transition duration-300 hover:bg-white/40 disabled:pointer-events-none disabled:opacity-50 dark:text-neutral-100 dark:hover:bg-white/10 dark:focus:outline-hidden"
           data-hs-collapse="#navbar-collapse-with-animation"
-          aria-controls="navbar-collapse-with-animation"
+          aria-controls="#navbar-collapse-with-animation"
           aria-label="Toggle navigation"
         >
           <svg
@@ -75,7 +82,7 @@ const homeUrl = "/";
     <!-- Contains navigation links -->
     <div
       id="navbar-collapse-with-animation"
-      class="hs-collapse hidden grow basis-full overflow-hidden transition-all duration-300 md:block"
+      class="hs-collapse relative z-10 hidden grow basis-full overflow-hidden transition-all duration-300 md:block"
     >
       <!-- Navigation links container -->
       <div
@@ -208,4 +215,156 @@ const homeUrl = "/";
       });
     });
   });
+</script>
+
+<!-- Interactive Liquid Water Surface Ripple Engine -->
+<script is:inline>
+  (function () {
+    function initNavbarWater() {
+      const nav = document.querySelector(".liquid-glass-nav");
+      const canvas = document.getElementById("navbar-water-canvas");
+      if (!nav || !canvas) return;
+
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return;
+
+      let width = 0;
+      let height = 0;
+      let dpr = window.devicePixelRatio || 1;
+      let ripples = [];
+      let isRunning = false;
+      let lastX = 0;
+      let lastY = 0;
+
+      function resize() {
+        const rect = nav.getBoundingClientRect();
+        width = rect.width;
+        height = rect.height;
+        dpr = window.devicePixelRatio || 1;
+        canvas.width = Math.floor(width * dpr);
+        canvas.height = Math.floor(height * dpr);
+        canvas.style.width = width + "px";
+        canvas.style.height = height + "px";
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.scale(dpr, dpr);
+      }
+
+      resize();
+      if (typeof ResizeObserver !== "undefined") {
+        new ResizeObserver(resize).observe(nav);
+      } else {
+        window.addEventListener("resize", resize);
+      }
+
+      function addRipple(x, y, speed, strength) {
+        ripples.push({
+          x: x,
+          y: y,
+          radius: 2,
+          maxRadius: Math.max(width, height) * 0.45,
+          alpha: strength || 0.5,
+          speed: speed || 2.4,
+          decay: 0.962,
+        });
+
+        if (!isRunning) {
+          isRunning = true;
+          requestAnimationFrame(animate);
+        }
+      }
+
+      function animate() {
+        if (ripples.length === 0) {
+          ctx.clearRect(0, 0, width, height);
+          isRunning = false;
+          return;
+        }
+
+        ctx.clearRect(0, 0, width, height);
+        const isDark = document.documentElement.classList.contains("dark");
+
+        for (let i = ripples.length - 1; i >= 0; i--) {
+          const r = ripples[i];
+          r.radius += r.speed;
+          r.alpha *= r.decay;
+
+          if (r.alpha < 0.012 || r.radius > r.maxRadius) {
+            ripples.splice(i, 1);
+            continue;
+          }
+
+          const crestAlpha = Math.min(1, r.alpha * 1.25);
+
+          // Liquid ripple wave crest
+          ctx.save();
+          ctx.beginPath();
+          ctx.arc(r.x, r.y, r.radius, 0, Math.PI * 2);
+          ctx.strokeStyle = isDark
+            ? `rgba(186, 230, 253, ${crestAlpha * 0.4})`
+            : `rgba(255, 255, 255, ${crestAlpha * 0.8})`;
+          ctx.lineWidth = Math.max(0.8, 3.2 * (1 - r.radius / r.maxRadius));
+          ctx.stroke();
+
+          // Refraction secondary ring (subtle water shimmer)
+          if (r.radius > 6) {
+            ctx.beginPath();
+            ctx.arc(r.x, r.y, Math.max(1, r.radius - 4.5), 0, Math.PI * 2);
+            ctx.strokeStyle = isDark
+              ? `rgba(147, 197, 253, ${crestAlpha * 0.18})`
+              : `rgba(186, 230, 253, ${crestAlpha * 0.35})`;
+            ctx.lineWidth = 1.2;
+            ctx.stroke();
+          }
+          ctx.restore();
+        }
+
+        requestAnimationFrame(animate);
+      }
+
+      nav.addEventListener("mousemove", (e) => {
+        const rect = nav.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const dist = Math.hypot(x - lastX, y - lastY);
+        if (dist > 14) {
+          addRipple(x, y, 2.2, 0.45);
+          lastX = x;
+          lastY = y;
+        }
+      });
+
+      nav.addEventListener("mouseenter", (e) => {
+        const rect = nav.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        addRipple(x, y, 2.8, 0.65);
+        lastX = x;
+        lastY = y;
+      });
+
+      nav.addEventListener(
+        "touchmove",
+        (e) => {
+          if (e.touches && e.touches.length > 0) {
+            const rect = nav.getBoundingClientRect();
+            const x = e.touches[0].clientX - rect.left;
+            const y = e.touches[0].clientY - rect.top;
+            const dist = Math.hypot(x - lastX, y - lastY);
+            if (dist > 16) {
+              addRipple(x, y, 2.0, 0.4);
+              lastX = x;
+              lastY = y;
+            }
+          }
+        },
+        { passive: true },
+      );
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initNavbarWater);
+    } else {
+      initNavbarWater();
+    }
+  })();
 </script>
