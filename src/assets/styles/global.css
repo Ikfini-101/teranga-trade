@@ -125,8 +125,8 @@
 /* --- PREMIUM CLASSIC GLASSMORPHISM & AVIF BACKGROUND SYSTEM --- */
 
 body {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), 
-                    url('../../images/women_cooperative_background.avif') !important;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), 
+                    url('../../images/teranga_port_background.avif') !important;
   background-attachment: fixed !important;
   background-size: cover !important;
   background-position: center !important;
@@ -134,8 +134,8 @@ body {
 }
 
 .dark body {
-  background-image: linear-gradient(rgba(15, 15, 17, 0.65), rgba(15, 15, 17, 0.65)), 
-                    url('../../images/women_cooperative_background.avif') !important;
+  background-image: linear-gradient(rgba(10, 30, 60, 0.72), rgba(10, 30, 60, 0.72)), 
+                    url('../../images/teranga_port_background.avif') !important;
 }
 
 /* Polished Glassmorphism panels for page sections */
