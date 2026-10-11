@@ -228,3 +228,23 @@ main section li {
     background-color: rgba(15, 23, 42, 0.94) !important;
   }
 }
+
+/* --- WCAG 2.1 AA ACCESSIBILITY ENHANCEMENTS --- */
+
+/* Indicateur de focus clavier visible et contrasté (WCAG 2.4.7 AA) */
+:focus-visible {
+  outline: 2px solid #eab308 !important;
+  outline-offset: 2px !important;
+}
+
+/* Respect de la préférence utilisateur de réduction des mouvements (WCAG 2.3.3) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
