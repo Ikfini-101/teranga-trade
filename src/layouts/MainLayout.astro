@@ -42,9 +42,13 @@ interface Props {
       // Thème clair par défaut pour tous les visiteurs
       // La classe dark n'est ajoutée que si l'utilisateur a explicitement choisi le mode sombre
       (function () {
-        if (localStorage.getItem("hs_theme") === "dark") {
-          document.documentElement.classList.add("dark");
-        } else {
+        try {
+          if (localStorage.getItem("hs_theme") === "dark") {
+            document.documentElement.classList.add("dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+          }
+        } catch (e) {
           document.documentElement.classList.remove("dark");
         }
       })();

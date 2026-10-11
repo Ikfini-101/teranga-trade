@@ -20,10 +20,10 @@ const isActive = currentPath === targetPath ||
 <a
   href={url}
   data-astro-prefetch
-  class={`inline-flex items-center rounded-lg text-base font-semibold transition-colors duration-300 outline-hidden ring-zinc-500 focus-visible:ring-3 dark:ring-zinc-200 dark:focus:outline-hidden md:py-3 md:text-sm 2xl:text-base ${
+  class={`inline-flex items-center rounded-xl px-3 py-2 text-base font-semibold transition-all duration-200 outline-hidden ring-zinc-500 focus-visible:ring-3 dark:ring-zinc-200 dark:focus:outline-hidden md:px-0 md:py-3 md:text-sm 2xl:text-base ${
     isActive
-      ? "text-orange-600 font-bold dark:text-orange-400 md:border-b-2 md:border-orange-600 dark:md:border-orange-400 md:rounded-none md:pb-1"
-      : "text-neutral-800 hover:text-orange-600 dark:text-neutral-100 dark:hover:text-orange-300"
+      ? "text-orange-600 font-bold dark:text-orange-400 bg-white/30 dark:bg-white/10 md:bg-transparent md:dark:bg-transparent md:border-b-2 md:border-orange-600 dark:md:border-orange-400 md:rounded-none md:pb-1"
+      : "text-neutral-800 hover:text-orange-600 hover:bg-white/25 dark:text-neutral-100 dark:hover:text-orange-300 dark:hover:bg-white/10 md:hover:bg-transparent md:dark:hover:bg-transparent"
   }`}
   aria-current={isActive ? "page" : undefined}
 >
