@@ -5,9 +5,9 @@ main:
   id: 2
   content: |
     Tractopelle polyvalent JCB 3CX de référence pour chantiers urbains et terrassements. Matériel disponible sur commande et sous réserve de disponibilité réelle.
-  imgCard: "@/images/ttl_placeholder.png"
-  imgMain: "@/images/ttl_placeholder.png"
-  imgAlt: "Photo à venir"
+  imgCard: "@/images/jcb_3cx_exterieur.jpg"
+  imgMain: "@/images/jcb_3cx_exterieur.jpg"
+  imgAlt: "Tractopelle JCB 3CX, vue extérieure"
 tabs:
   - id: "tabs-with-card-item-1"
     dataTab: "#tabs-with-card-1"
@@ -47,6 +47,6 @@ specificationsRight:
   - title: "Incoterm"
     subTitle: "CFR port convenu (à confirmer au devis)"
 blueprints:
-  first: "@/images/ttl_placeholder.png"
-  second: "@/images/ttl_placeholder.png"
+  first: "@/images/jcb_3cx_cabine.jpg"
+  second: "@/images/jcb_3cx_godet_arriere.jpg"
 ---

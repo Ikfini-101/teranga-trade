@@ -6,7 +6,8 @@ import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
 import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
 
-import heroPlaceholder from "@images/ttl_placeholder.png";
+import heroImage from "@images/autocar_mercedes_hero.jpg";
+import poles from "@images/logistique_maritime_roro.jpg";
 import faqs from "@data/fr/faqs.json";
 import features from "@data/fr/features.json";
 ---
@@ -21,8 +22,8 @@ import features from "@data/fr/features.json";
     secondaryBtn="Découvrir les équipements"
     secondaryBtnURL="/products"
     withReview={false}
-    src={heroPlaceholder}
-    alt="Teranga Trade And Logistics"
+    src={heroImage}
+    alt="Autocar blanc stationné sur un parc logistique"
   />
 
   {/* 2. QUI SOMMES-NOUS */}
@@ -63,8 +64,8 @@ import features from "@data/fr/features.json";
   <FeaturesGeneral
     title="Nos Trois Pôles d'Excellence"
     subTitle="Une offre ciblée pour répondre aux impératifs d'équipement et de logistique des professionnels en Afrique de l'Ouest."
-    src={heroPlaceholder}
-    alt="Pôles d'excellence Teranga Trade And Logistics"
+    src={poles}
+    alt="Navire Ro-Ro à quai dans un port"
     features={features}
   />
 
