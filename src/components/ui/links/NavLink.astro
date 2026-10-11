@@ -22,8 +22,8 @@ const isActive = currentPath === targetPath ||
   data-astro-prefetch
   class={`inline-flex items-center rounded-lg text-base font-semibold transition-colors duration-300 outline-hidden ring-zinc-500 focus-visible:ring-3 dark:ring-zinc-200 dark:focus:outline-hidden md:py-3 md:text-sm 2xl:text-base ${
     isActive
-      ? "text-orange-600 dark:text-orange-400 md:border-b-2 md:border-orange-600 dark:md:border-orange-400 md:rounded-none md:pb-1"
-      : "text-neutral-600 hover:text-orange-500 dark:text-neutral-400 dark:hover:text-orange-300"
+      ? "text-orange-600 font-bold dark:text-orange-400 md:border-b-2 md:border-orange-600 dark:md:border-orange-400 md:rounded-none md:pb-1"
+      : "text-neutral-800 hover:text-orange-600 dark:text-neutral-100 dark:hover:text-orange-300"
   }`}
   aria-current={isActive ? "page" : undefined}
 >

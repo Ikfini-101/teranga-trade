@@ -201,3 +201,125 @@ main section li {
 .dark main section li {
   color: var(--color-gray-200, #e4e4e7) !important;
 }
+
+/* --- LIQUID GLASS NAVBAR (iOS 26 / WhatsApp style) --- */
+/* Floating, highly transparent bar: strong blur + saturation, specular
+   light rim, top sheen and soft drop shadow. Pseudo-elements sit behind
+   the content thanks to `isolation: isolate` + negative z-index. */
+.liquid-glass-nav {
+  isolation: isolate;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.38) 0%,
+    rgba(255, 255, 255, 0.16) 50%,
+    rgba(255, 255, 255, 0.26) 100%
+  );
+  -webkit-backdrop-filter: blur(22px) saturate(200%) brightness(1.06);
+  backdrop-filter: blur(22px) saturate(200%) brightness(1.06);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow:
+    0 10px 30px -10px rgba(15, 23, 42, 0.25),
+    0 2px 6px -2px rgba(15, 23, 42, 0.08),
+    inset 0 1px 1px rgba(255, 255, 255, 0.75),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.2),
+    inset 0 0 18px rgba(255, 255, 255, 0.12);
+}
+
+/* Specular rim: bright on top-left / bottom-right edges, fading elsewhere */
+.liquid-glass-nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.15) 35%,
+    rgba(255, 255, 255, 0.05) 60%,
+    rgba(255, 255, 255, 0.6) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box exclude,
+    linear-gradient(#000 0 0);
+  pointer-events: none;
+}
+
+/* Top sheen: soft light reflection on the upper half of the glass */
+.liquid-glass-nav::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.35) 0%,
+    rgba(255, 255, 255, 0.08) 45%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  pointer-events: none;
+}
+
+.dark .liquid-glass-nav {
+  background: linear-gradient(
+    135deg,
+    rgba(38, 38, 42, 0.55) 0%,
+    rgba(24, 24, 27, 0.35) 50%,
+    rgba(38, 38, 42, 0.5) 100%
+  );
+  -webkit-backdrop-filter: blur(22px) saturate(180%) brightness(0.95);
+  backdrop-filter: blur(22px) saturate(180%) brightness(0.95);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 12px 34px -10px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px rgba(255, 255, 255, 0.18),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.05),
+    inset 0 0 18px rgba(255, 255, 255, 0.04);
+}
+
+.dark .liquid-glass-nav::before {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.06) 35%,
+    rgba(255, 255, 255, 0.02) 60%,
+    rgba(255, 255, 255, 0.22) 100%
+  );
+}
+
+.dark .liquid-glass-nav::after {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.02) 45%,
+    rgba(255, 255, 255, 0) 60%
+  );
+}
+
+/* Keep nav labels legible over the photo background */
+.liquid-glass-nav a,
+.liquid-glass-nav button {
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.55);
+}
+
+.dark .liquid-glass-nav a,
+.dark .liquid-glass-nav button {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Fallback when backdrop-filter is unsupported: more opaque glass */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .liquid-glass-nav {
+    background: rgba(255, 255, 255, 0.85);
+  }
+
+  .dark .liquid-glass-nav {
+    background: rgba(24, 24, 27, 0.9);
+  }
+}
