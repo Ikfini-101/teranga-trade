@@ -246,7 +246,7 @@ const ogTitle = `${product.data.title} | Produits | ${SITE.title}`;
             <Image
               src={product.data.blueprints.first}
               class="h-full w-full object-cover object-center"
-              alt="Blueprint Illustration"
+              alt={product.data.blueprints.firstAlt ?? "Illustration technique"}
               format={"avif"}
             />
           )
@@ -259,7 +259,7 @@ const ogTitle = `${product.data.title} | Produits | ${SITE.title}`;
             <Image
               src={product.data.blueprints.second}
               class="h-full w-full object-cover object-center"
-              alt="Blueprint Illustration"
+              alt={product.data.blueprints.secondAlt ?? "Illustration technique"}
               format={"avif"}
             />
           )

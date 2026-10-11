@@ -48,5 +48,7 @@ specificationsRight:
     subTitle: "CFR port convenu (à confirmer au devis)"
 blueprints:
   first: "@/images/iveco_crossway_interieur.jpg"
+  firstAlt: "Poste de conduite et habitacle voyageurs de l'autocar Iveco Crossway"
   second: "@/images/iveco_crossway_soutes.jpg"
+  secondAlt: "Soutes à bagages et compartiments techniques de l'autocar Iveco Crossway"
 ---

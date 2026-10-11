@@ -47,6 +47,8 @@ specificationsRight:
   - title: "Incoterm"
     subTitle: "CFR port convenu (à confirmer au devis)"
 blueprints:
-  first: "@/images/tracteur_agricole_case_exterieur.jpg"
-  second: "@/images/tracteur_agricole_case_exterieur.jpg"
+  first: "@/images/tracteur_agricole_cabine.jpg"
+  firstAlt: "Poste de conduite et cabine du tracteur agricole"
+  second: "@/images/tracteur_agricole_attelage.jpg"
+  secondAlt: "Attelage 3 points et prise de force arrière"
 ---

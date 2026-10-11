@@ -48,5 +48,7 @@ specificationsRight:
     subTitle: "CFR port convenu (à confirmer au devis)"
 blueprints:
   first: "@/images/jcb_3cx_cabine.jpg"
+  firstAlt: "Poste de conduite et commandes en cabine du tractopelle JCB 3CX"
   second: "@/images/jcb_3cx_godet_arriere.jpg"
+  secondAlt: "Bras d'excavation et godet arrière du tractopelle JCB 3CX"
 ---

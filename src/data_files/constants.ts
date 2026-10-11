@@ -1,4 +1,4 @@
-import ogImageSrc from "@images/og_teranga_1200x630.jpg";
+import ogImageSrc from "@images/og_teranga_hd_1200x630.jpg";
 
 export const SITE = {
   title: "Teranga Trade And Logistics",
