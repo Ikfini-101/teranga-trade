@@ -20,6 +20,13 @@ const footerLinks = [
       { name: "Demander un devis", url: "/contact" },
     ],
   },
+  {
+    section: "Informations légales",
+    links: [
+      { name: "Mentions légales", url: "/mentions-legales" },
+      { name: "Données & Confidentialité", url: "/mentions-legales#donnees-personnelles" },
+    ],
+  },
 ];
 
 const socialLinks = {
