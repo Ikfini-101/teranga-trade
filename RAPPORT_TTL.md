@@ -7,7 +7,7 @@
 - **Projet Cloudflare Pages** : `teranga-trade` (`https://teranga-trade.pages.dev`)
 - **Nom de domaine de production** : `https://www.terangatradelogistics.com` (CNAME vers `teranga-trade.pages.dev` + redirection apex 301)
 - **Email officiel** : `contact@terangatradelogistics.com`
-- **Numéro WhatsApp Business** : `+336695880286` (lien `wa.me/336695880286`)
+- **Numéro WhatsApp Business** : `+337669694764` (lien `wa.me/337669694764`)
 - **Stack technique** : Astro 5, Tailwind CSS 4 (`@tailwindcss/vite`), Preline UI, GSAP, Lenis, compression Brotli + Zstd. Sortie statique dans `dist/`.
 
 ---
@@ -35,7 +35,8 @@
 19. `f9019b2` `ttl: bouton whatsapp flottant circulaire minimaliste`
 20. `ee1da12` `ttl: contraste et couleur verte officielle du bouton whatsapp en mode clair`
 21. `d75fd25` `ttl: finalisation du rapport et alignement du domaine officiel dans les metadonnees et robots`
-22. `ttl: activation du formulaire de contact web3forms`
+22. `5892b83` `ttl: activation du formulaire de contact web3forms`
+23. `ttl: mise a jour du numero whatsapp business officiel`
 
 ---
 
@@ -85,7 +86,7 @@
 | **Nom de domaine** | ✅ Relié sur Cloudflare Pages (`www.terangatradelogistics.com` + apex) | Aucune action nécessaire, le site est en ligne. |
 | **Certificat SSL / HTTPS** | ✅ Actif et géré automatiquement par Cloudflare | Aucune action nécessaire. |
 | **Email officiel** | ✅ `contact@terangatradelogistics.com` partout | Aucune action nécessaire. |
-| **WhatsApp Business** | ✅ Bouton flottant circulaire en bas à droite + bouton CTA vert officiel | Vérifier le 10e chiffre du numéro fourni (`+336695880286`) : si un `6` est en trop à la fin, signaler pour ajustement. |
+| **WhatsApp Business** | ✅ Bouton flottant circulaire en bas à droite + bouton CTA vert officiel (`+337669694764`) | Aucune action nécessaire. |
 | **Catalogue & Photos** | ✅ 6 fiches réelles avec photos HD et OpenGraph 1200x630 | Aucune action nécessaire. |
 | **Mentions Légales & RGPD** | ✅ Page complète `/mentions-legales` active | Fournir SIRET/RCS Le Havre et RCCM/NINEA Dakar dès attribution administrative définitive. |
 | **Clé Web3Forms** | ✅ Actif (`776da1a0-5f64-4e68-aeb9-438fdd15f1c6`) sur le formulaire de contact | Aucune action nécessaire, les demandes de devis arrivent désormais directement sur `contact@terangatradelogistics.com`. |
