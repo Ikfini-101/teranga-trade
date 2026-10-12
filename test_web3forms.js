@@ -9,10 +9,10 @@ async function test() {
   const web3formsPayload = {
     access_key: accessKey,
     name: "Test TTL",
-    email: "test@teranga-trade-logistics.com",
+    email: "test@terangatradelogistics.com",
     subject: "[TTL] Test Web3Forms",
     message: "Ceci est un message de test technique TTL.",
-    replyto: "test@teranga-trade-logistics.com"
+    replyto: "test@terangatradelogistics.com"
   };
 
   try {

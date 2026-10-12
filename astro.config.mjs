@@ -7,7 +7,7 @@ import mdx from "@astrojs/mdx";
 // https://astro.build/config
 export default defineConfig({
   // https://docs.astro.build/en/guides/images/#authorizing-remote-images
-  site: "https://teranga-trade.pages.dev",
+  site: "https://www.terangatradelogistics.com",
   image: {
     domains: ["images.unsplash.com"],
   },
