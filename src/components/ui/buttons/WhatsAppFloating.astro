@@ -2,7 +2,7 @@
 import { CONTACT } from "@data/constants";
 
 // Numéro WhatsApp configuré (sans caractères spéciaux pour le lien wa.me)
-const rawNumber = CONTACT.whatsapp || "337669694764";
+const rawNumber = CONTACT.whatsapp || "33769694764";
 const cleanNumber = rawNumber.replace(/[^0-9]/g, "");
 const messageText = encodeURIComponent("Bonjour Teranga Trade And Logistics, je souhaite des renseignements sur vos équipements.");
 const whatsappUrl = `https://wa.me/${cleanNumber}?text=${messageText}`;
