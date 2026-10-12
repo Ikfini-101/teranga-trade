@@ -34,6 +34,8 @@
 18. `3758aed` `ttl: ajout du bouton whatsapp business flottant et harmonisation adresse email`
 19. `f9019b2` `ttl: bouton whatsapp flottant circulaire minimaliste`
 20. `ee1da12` `ttl: contraste et couleur verte officielle du bouton whatsapp en mode clair`
+21. `d75fd25` `ttl: finalisation du rapport et alignement du domaine officiel dans les metadonnees et robots`
+22. `ttl: activation du formulaire de contact web3forms`
 
 ---
 
@@ -49,7 +51,7 @@
 | `/products/pelle-hydraulique-sur-chenilles` | `src/pages/products/[id].astro` | *Pelle Hydraulique sur chenilles — sous réserve de disponibilité réelle* | Conforme (Photos réelles extérieure/chantier, 0 prix) |
 | `/products/chargeuse-sur-pneus` | `src/pages/products/[id].astro` | *Chargeuse sur pneus — sous réserve de disponibilité réelle* | Conforme (Photos réelles extérieure, 0 prix) |
 | `/products/moissonneuse-batteuse` | `src/pages/products/[id].astro` | *Moissonneuse-Batteuse — sous réserve de disponibilité réelle* | Conforme (Photos réelles extérieure, 0 prix) |
-| `/contact` | `src/pages/contact.astro` | *Contactez notre Centrale d'Achat \| Teranga Trade And Logistics* | Conforme (Siège Europe Le Havre + Implantation Afrique Dakar, email officiel, bloc WhatsApp, formulaire Web3Forms avec repli) |
+| `/contact` | `src/pages/contact.astro` | *Contactez notre Centrale d'Achat \| Teranga Trade And Logistics* | Conforme (Siège Europe Le Havre + Implantation Afrique Dakar, email officiel, bloc WhatsApp, formulaire Web3Forms actif) |
 | `/mentions-legales` | `src/pages/mentions-legales.astro` | *Mentions Légales \| Teranga Trade And Logistics* | Conforme (8 sections juridiques, RGPD, CNIL/CDP, Cloudflare Pages, numéros « en cours d'attribution ») |
 | `/404` | `src/pages/404.astro` | *404 \| Teranga Trade And Logistics* | Conforme (Sobriété, lien accessible retour accueil) |
 
@@ -86,4 +88,5 @@
 | **WhatsApp Business** | ✅ Bouton flottant circulaire en bas à droite + bouton CTA vert officiel | Vérifier le 10e chiffre du numéro fourni (`+336695880286`) : si un `6` est en trop à la fin, signaler pour ajustement. |
 | **Catalogue & Photos** | ✅ 6 fiches réelles avec photos HD et OpenGraph 1200x630 | Aucune action nécessaire. |
 | **Mentions Légales & RGPD** | ✅ Page complète `/mentions-legales` active | Fournir SIRET/RCS Le Havre et RCCM/NINEA Dakar dès attribution administrative définitive. |
-| **Clé Web3Forms** | ⚠️ Message de repli actif invitant à écrire par email | Créer un token gratuit sur web3forms.com avec `contact@terangatradelogistics.com` et renseigner `PUBLIC_WEB3FORMS_ACCESS_KEY` dans les variables d'environnement Cloudflare Pages. |
+| **Clé Web3Forms** | ✅ Actif (`776da1a0-5f64-4e68-aeb9-438fdd15f1c6`) sur le formulaire de contact | Aucune action nécessaire, les demandes de devis arrivent désormais directement sur `contact@terangatradelogistics.com`. |
+

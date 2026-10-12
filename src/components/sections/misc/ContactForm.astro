@@ -52,7 +52,7 @@ const labels = {
 } as const;
 
 const t = labels[lang];
-const accessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || "";
+const accessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || "776da1a0-5f64-4e68-aeb9-438fdd15f1c6";
 ---
 
 <div id="contact-form-wrapper" class="w-full">
@@ -226,9 +226,24 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || "";
       hideError();
 
       const formData = new FormData(form);
+      const firstName = (formData.get("firstName") as string)?.trim() || "";
+      const lastName = (formData.get("lastName") as string)?.trim() || "";
+      const email = (formData.get("email") as string)?.trim() || "";
+      const message = (formData.get("message") as string)?.trim() || "";
+
+      if (!firstName || !lastName || !email || !message) {
+        showError(
+          document.documentElement.lang === "en"
+            ? "Please fill in all required fields."
+            : "Veuillez remplir tous les champs obligatoires (*)."
+        );
+        return;
+      }
+
       const accessKey =
         (formData.get("access_key") as string)?.trim() ||
-        import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY;
+        import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ||
+        "776da1a0-5f64-4e68-aeb9-438fdd15f1c6";
 
       if (!accessKey) {
         showError(
@@ -241,12 +256,12 @@ const accessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || "";
 
       const payload = {
         access_key: accessKey,
-        name: `${(formData.get("firstName") as string)?.trim()} ${(formData.get("lastName") as string)?.trim()}`,
-        email: (formData.get("email") as string)?.trim(),
+        name: `${firstName} ${lastName}`,
+        email: email,
         subject:
           (formData.get("subject") as string)?.trim() ||
           "Nouvelle demande de devis TTL",
-        message: (formData.get("message") as string)?.trim(),
+        message: message,
       };
 
       setLoading(true);
