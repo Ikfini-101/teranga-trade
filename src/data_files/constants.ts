@@ -48,5 +48,6 @@ export const partnersData: Partner[] = [];
 
 export const CONTACT = {
   email: "contact@terangatradelogistics.com",
-  whatsapp: "33769694764",
+  phone: "+33685836242",
+  whatsapp: "33685836242",
 };
